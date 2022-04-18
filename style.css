@@ -2,22 +2,23 @@ body {
     background-color: #212126;
 }
 
-.name {
+.text {
     color: white;
     font-family: Helvetica;
-    font-size: 40px;
     position: fixed;
+    
     top: 40%;
     left: 50%;
     transform: translate(-50%, -50%)
 }
 
-.text {
-    color: white;
-    font-family: Helvetica;
-    font-size: 20px;
-    position: fixed;
-    top: 47%;
-    left: 50%;
-    transform: translate(-8%, -50%)
+.title {
+    font-size: 100px;
+    margin-bottom: 0;
+}
+
+.subtitle {
+    font-size: 30px;
+    text-align: right;
+    margin-top: 0;
 }
