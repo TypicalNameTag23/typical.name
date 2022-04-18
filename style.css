@@ -2,7 +2,11 @@ body {
     background-color: #212126;
 }
 
-h1 {
+h1.centered {
     color: white;
+    text-align: center;
+    font-family: Arial, Verdana, Helvetica;
+    position: fixed;
+    vertical-align: middle;
     text-align: center;
 }
