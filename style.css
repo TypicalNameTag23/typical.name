@@ -2,24 +2,22 @@ body {
     background-color: #212126;
 }
 
-h1.name {
+.name {
     color: white;
-    font-family: Arial, Verdana, Helvetica;
-    font-size: 100px;
+    font-family: Helvetica;
+    font-size: 40px;
     position: fixed;
-    top: 35%;
+    top: 40%;
     left: 50%;
-    margin-right: -50%;
     transform: translate(-50%, -50%)
 }
 
-h1.text {
+.text {
     color: white;
-    font-family: Arial, Verdana, Helvetica;
-    font-size: 25px;
+    font-family: Helvetica;
+    font-size: 20px;
     position: fixed;
-    top: 50%;
+    top: 47%;
     left: 50%;
-    margin-right: -75%;
-    transform: translate(-50%, -50%)
+    transform: translate(-8%, -50%)
 }
