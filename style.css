@@ -4,10 +4,10 @@ body {
 
 h1.centered {
     color: white;
-    text-align: center;
     font-family: Arial, Verdana, Helvetica;
+    size: 10in;
     position: fixed;
-    top: 50%;
+    top: 30%;
     left: 50%;
     margin-right: -50%;
     transform: translate(-50%, -50%)
