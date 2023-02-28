@@ -12,12 +12,12 @@ body {
 }
 
 #title {
-    font-size: 200em;
+    font-size: 10em;
     margin-bottom: 0;
 }
 
 #subtitle {
-    font-size: 200%;
+    font-size: 3em;
     text-align: right;
     margin-top: 0;
 }
