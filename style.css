@@ -21,3 +21,10 @@ body {
     text-align: right;
     margin-top: 0;
 }
+
+#even-smaller-subtitle {
+    font-size: 1vw;
+    text-align: right;
+    margin-top: 0;
+}
+
