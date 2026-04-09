@@ -49,7 +49,7 @@ async function getSurvivalChanceAsync(theThings) {
         redirect: "follow"
     };
 
-    const resp = await fetch("https://titanic-survival-predictor-zfob.onrender.com/predict", requestOptions);
+    const resp = await fetch("https://titanic-survival-predictor-fkrl.onrender.com/predict", requestOptions);
     console.log(resp)
 }
 
