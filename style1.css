@@ -1,0 +1,227 @@
+:root {
+    --main-bg-color: #DBDAD5;
+    --depressed-bg-color: #FFFFFF;
+    --depressed-button-bg-color: #b9b7ab;
+    --border-color-black: #000000;
+    --border-color-white: #FFFFFF;
+    --border-color-dark-gray: #B4B3B1;
+    --border-color-light-gray: #E0DFDD;
+    --list-primary: #FFFFFF;
+    --list-secondary: #eeeeee;
+}
+
+* {
+    font-family: Cantarell, serif;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    float: none;
+    display: inline-block;
+    vertical-align: top;
+    background-color: var(--main-bg-color);
+    height: 100vh;
+    width: 100vw;
+    margin: 0;
+}
+
+p {
+    padding: 0;
+    margin: 0;
+}
+
+#search-form {
+    display: flex;
+    align-items: stretch;
+    margin: 1px 0;
+}
+
+#search-container {
+    display: flex;
+    overflow: clip;
+    overflow-clip-margin: content-box;
+    width: calc(100% - 6px);
+    justify-content: center;
+    height: 32px;
+}
+
+#search-box-container {
+    position: absolute;
+}
+
+#search-box {
+    height: 22px;
+}
+
+#content-container {
+    display: flex;
+    flex-direction: column;
+    overflow: clip;
+    overflow-clip-margin: border-box;
+}
+
+#team-display-outer-container {
+    overflow: scroll; /* jank hacky workaround since idk why but setting this to clip causes it to go beyond 100% parent - 16px height */
+    width: calc(100% - 16px);
+    height: calc(100% - 16px);
+    margin: 8px;
+}
+
+/* jank hack to get the content of the list to not overlap the edge of the depressed container */
+#team-display-inner-container {
+    overflow: scroll; 
+    width: 100%;
+    height: 100%;
+}
+
+#team-display {
+    padding: 0;
+    margin: 0;
+}
+
+.depressed {
+    width: fit-content;
+    height: fit-content;
+    padding: 2px;
+    background-color: var(--depressed-bg-color);
+    box-shadow:
+            1px 1px 0 0 var(--border-color-dark-gray) inset,
+            -1px -1px 0 0 var(--border-color-white) inset,
+            2px 2px 0 0 var(--border-color-black) inset,
+            -2px -2px 0 0 var(--border-color-light-gray) inset;
+}
+
+.depressed > * {
+    border-width: 0;
+}
+
+.depressed > *:focus {
+    outline: black dotted 1px;
+    outline-offset: -1px;
+}
+
+.depressed.fill {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+}
+
+.raised {
+    width: fit-content;
+    /*margin: 0 2px;*/
+    padding: 3px;
+    background-color: var(--main-bg-color);
+    overflow: clip;
+    overflow-clip-margin: 2px;
+    box-shadow:
+            -1px -1px 0 0 var(--border-color-black) inset,
+            1px 1px 0 0 var(--border-color-white) inset,
+            -2px -2px 0 0 var(--border-color-dark-gray) inset,
+            2px 2px 0 0 var(--border-color-light-gray) inset;
+}
+
+.raised:focus {
+    outline: black dotted 1px;
+    outline-offset: -3px;
+}
+
+.raised.pressable:active {
+    box-shadow:
+            1px 1px 0 0 var(--border-color-dark-gray) inset,
+            -1px -1px 0 0 var(--border-color-white) inset,
+            2px 2px 0 0 var(--border-color-black) inset,
+            -2px -2px 0 0 var(--border-color-light-gray) inset;
+}
+
+.raised.fill {
+    width: 100%;
+    height: calc(100% - 36px);
+}
+
+.raised * {
+    border-width: 0;
+}
+
+.spaced > * {
+    margin: 0 1px;
+}
+
+.centered {
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.border-outer {
+    width: calc(100%);
+    height: calc(100% );
+    padding: 6px;
+    box-sizing: border-box;
+    border-width: 1px;
+    border-style: solid;
+    border-color: var(--border-color-dark-gray);
+}
+
+.border-inner {
+    width: 100%;
+    height: 100%;
+    padding: 2px;
+    box-sizing: border-box;
+    box-shadow:
+            1px 1px 0 0 var(--border-color-dark-gray) inset,
+            -1px -1px 0 0 var(--border-color-white) inset,
+            2px 2px 0 0 var(--border-color-white) inset,
+            -2px -2px 0 0 var(--border-color-dark-gray) inset;
+}
+
+button {
+    background-color: var(--main-bg-color);
+    padding: 4px;
+    width: fit-content;
+    height: fit-content;
+    border-width: 0;
+}
+
+button:focus {
+    outline: black dotted 1px;
+}
+
+button:active {
+    box-shadow:
+            1px 1px 0 0 var(--border-color-dark-gray) inset,
+            2px 2px 0 0 var(--border-color-black) inset,
+            -1px -1px 0 0 var(--border-color-white) inset,
+            -2px -2px 0 0 var(--border-color-light-gray) inset;
+    background: var(--depressed-button-bg-color);
+}
+
+button > img {
+    vertical-align: center;
+    height: 20px;
+    object-fit: fill;
+    font-weight: normal;
+}
+
+div.vertical-divider {
+    box-shadow:
+            1px 1px 0 0 var(--border-color-dark-gray) inset,
+            -1px -1px 0 0 var(--border-color-white) inset;
+    width: 2px;
+    height: 50%;
+    margin: 0 2px;
+}
+
+div.divider-container {
+    align-content: center;
+}
+
+ul > *:nth-child(even) {
+    background: var(--list-primary);
+}
+
+ul > *:nth-child(odd) {
+    background: var(--list-secondary);
+}
