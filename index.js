@@ -29,23 +29,28 @@ function displaySurvivalChance(successResponseMaybeIWontCheck) {
 }
 
 async function getSurvivalChanceAsync(theThings) {
-    const requestBody = {
-        'Pclass': theThings[0],
-        'Sex': theThings[1],
-        'Age': theThings[2],
-        'SibSp': theThings[3],
-        'Parch': theThings[4],
-        'Fare': theThings[5],
-        'Embarked': theThings[6]
-    }
+    const myHeaders = new Headers();
+    myHeaders.append("Content-Type", "application/json");
 
-    return await fetch(betterEndpoint, {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json; charset=utf-8'
-        },
-        body: JSON.stringify(requestBody)
+    const raw = JSON.stringify({
+        "Pclass": "3",
+        "Sex": " female",
+        "Age": " 54",
+        "SibSp": " 1",
+        "Parch": " 0",
+        "Fare": " 70.25",
+        "Embarked": " Q"
     });
+
+    const requestOptions = {
+        method: "POST",
+        headers: myHeaders,
+        body: raw,
+        redirect: "follow"
+    };
+
+    const resp = await fetch("https://titanic-survival-predictor-zfob.onrender.com/predict", requestOptions);
+    console.log(resp)
 }
 
 document.getElementById("clearButton")
